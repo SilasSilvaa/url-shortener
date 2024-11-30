@@ -14,4 +14,11 @@ public class ControllerExceptionHandler {
 
         return ResponseEntity.internalServerError().body(exception);
     }
+
+    @ExceptionHandler(NotFoundException.class)
+    public ResponseEntity<ExceptionDTO> notFoundException(NotFoundException e){
+        ExceptionDTO exception = new ExceptionDTO(e.getMessage(), "404");
+
+        return ResponseEntity.internalServerError().body(exception);
+    }
 }
