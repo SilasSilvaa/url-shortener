@@ -20,6 +20,6 @@ public class UrlEntity {
 
     private String fullUrl;
 
-    @Indexed(expireAfter = "0")
-    private LocalDateTime expiresAt;
+    @Indexed(expireAfter = "60s")
+    private LocalDateTime expireAt;
 }
